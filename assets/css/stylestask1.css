@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    background-image: url('../images/task1/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    overflow:hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+.login{
+    background:transparent;
+    width:500px;
+    height:500px;
+    background-image: url('../images/task1/rectangle1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;   
+}
+.signup{
+    background:transparent;
+    width:500px;
+    height:900px;
+    background-image: url('../images/task1/rectangle2.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;   
+}
+.form{
+    display: flex;
+    justify-content: center;
+align-items: center;}
+.p1{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 40;
+    margin-top: 40;
+    margin-bottom: 10;
+}
+.p2{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 40;
+    margin-top: 40;
+    margin-bottom: 10;
+}
+.p3{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20;
+    margin-top: 40;
+    margin-bottom: 10;
+}
+fieldset{
+    display: block;
+    border-top: 2px solid grey ;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    width: 300px;
+    height: 600px;
+}
+.topdiv{
+    display:block;
+    position: relative;
+    margin-top: 20px;
+    align-items: center;
+    justify-items: auto;
+}
+.div{
+    display:block;
+    position: relative;
+    margin-top: 20px;
+    padding: 0%;
+    align-items: center;
+    justify-items: auto;
+}
+.toplabel{
+    
+    font: bold;
+    font-size: 20;
+    display: inline-table;
+    position:relative;
+    font: Open Sans;
+    font-weight: 700;
+    font-size: 16px;
+
+}
+.botlabel{
+    font: bold;
+    font-size: 20;
+    font: Open Sans;
+    font-weight: 700;
+    font-size: 16px;
+} 
+.inputtext{
+    width: 300px;
+    height: 40px;   
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #F4F4F4;
+    outline: #2871AA ;
+    box-shadow: inset;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} 
+.inputtext:focus{
+    border: none;
+    outline: #2871AA 2px solid ;
+}
+.button{
+    align-self: center;
+    height: 50px;
+    width: 150px;
+    background-color: #2871AA;
+    border: 1px solid #2871AA;
+    border-radius: 10px;
+    font: 700;
+    font-size: 20px;
+    font-family: "Open Sans";
+    color: #FFFFFF;
+    }
+.submitbutton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+.submitbutton>a{
+    margin-top: 10px;
+    margin-left: 126px;
+    text-decoration: none;
+    color: #2871AA;
+    font-weight: bold;
+}
+.alreadyhaveaccount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.alreadyhaveaccount>a{
+    color: #2871AA;
+    text-decoration: none;
+}
+
+.facebookbutton{
+    background-image: url('../images/task1/facebook.svg');
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    background-position: center;
+    border: none;
+    margin-right: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+.facebookbutton:hover{
+    border: none;
+    outline: #2871AA 2px solid ;
+
+}
+.googlebutton{
+    background-image: url('../images/task1/google.svg');
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    margin-right: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+.googlebutton:hover{
+    border: none;
+    outline: #2871AA 2px solid ;
+
+}
+.instagrambutton{
+    background-image: url('../images/task1/instagram.svg');
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none; 
+    margin-right: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.instagrambutton:hover{
+    border: none;
+    outline: #2871AA 2px solid ;
+
+}
+.loginmethods{
+    display: inline-block;
+    justify-items: center;
+    align-items: center;
+    margin: 20px 0px 0px 64.5px;
+}
