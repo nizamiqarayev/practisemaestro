@@ -235,7 +235,7 @@ width: fit-content;
         height: 3vw;
         width: 3vw;
         border-radius: 4px;
-        position: absolute;
+        position: fixed;
         top: 10vw;
         right: 10vw;
         background-color: #8e7229;
