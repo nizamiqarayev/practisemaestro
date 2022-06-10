@@ -1,0 +1,294 @@
+*{
+    box-sizing: border-box ;
+}
+html,body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    overflow-y: auto;
+}
+.hamburger{
+    display: none;
+}
+.parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5.857vw;
+    background-color: #1c1d1a;
+    border-bottom: 0.22vw solid #8e7229;
+    font-family: 'Roboto', sans-serif;
+}
+.nav div a{
+    
+    color: #8e7229;
+    text-decoration: none;
+}
+.nav .tools{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    height: 4.758vw;
+    margin-top: 4.392vw;
+}
+.nav .tools a{
+    display: flex;
+    height: 4.758vw;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 0.732vw;
+    padding-right: 1.464vw;
+    padding-left: 1.098vw;
+}
+.nav .tools a:hover{
+    border-bottom: none;
+    background-color: #514f50;
+    border: 0.073vw solid #8e7229;
+    border-bottom: 0vw;
+    border-radius: 0.732vw;
+    transition: all 5ms;
+}  
+.nav .logo {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: left;
+    height: 5.857vw;
+    padding-right: 14.641vw;
+    padding-left: 1.83vw;
+    /* background-color: aqua; */
+}
+.nav .logo .the{
+    font-size: 1.464vw;
+    position: absolute;
+    left: -2.562vw;
+}
+.nav .logo .brownie{
+    font-size: 2.562vw;
+}
+.bigdiv{
+    width: 100%;
+    height: fit-content;
+    background-color: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigdiv section{
+    display: flex;
+    width: 73.206vw;
+    height: 29.283vw;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+    border: 0.073vw solid bla;
+}
+.bigdiv section h1{
+    color: #584422;
+    padding-bottom: 0;
+    padding: 0.732vw;
+    font-size: 2vw;
+}
+.bigdiv section h3{
+    color: #725f2b;
+    padding: 0.732vw;
+    font-size: 19.998px;
+}
+.bigdiv section p{
+    color: white;
+    padding: 0.732vw;
+    font-size: 1.464vw;
+}
+.bigdiv section div{
+/* background-color: aqua; */
+width: fit-content;
+}
+.bigdiv section .img{
+    display: flex;
+    justify-content: center;
+    align-content: center ;
+    background-color: black;
+    border-radius: 1.098vw;
+    padding: 7%;
+    border: 0.22vw solid #7f591b;
+}
+.bigdiv section .img img{
+    border-radius: 1.83vw;
+    /* border: 0.22vw solid #7f591b; */
+}
+/* .bigdiv section .img .picture img{
+    border-radius: 1.83vw;
+} */
+.bigdiv section .text1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1.464vw;
+    padding-left: 2.928vw;
+    text-align: right;
+} 
+.bigdiv section .text1 h1{
+     font-size: 2em;
+     margin: 0px;
+}
+.bigdiv section .text1 a{
+    text-decoration: none;
+    color: white;
+    background-color: #7f591b;
+    padding: 0.732vw;
+    border-radius:0.732vw ;
+}
+.bigdiv section .text2 h1{
+    font-size: 2em;
+    margin: 0px;
+}
+.bigdiv section .text2 h3{
+    font-size: 1em;
+    margin: 0px;
+}
+.bigdiv section .text2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1.464vw;
+    padding-right: 2.928vw;
+}
+.bigdiv section .text2 p{
+    text-align: end;
+}
+.bigdiv section .formdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border: 0.146vw solid #8e7229;
+    border-radius: 1.464vw;
+    height: fit-content;
+}
+.bigdiv section .formdiv .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.464vw;
+}
+.bigdiv section .formdiv .form .textinput{
+    width: 29.283vw;
+    height: 2.196vw;
+    padding-left: 1.464vw;
+    border: 0.146vw solid #8e7229;
+    border-radius: 1.464vw;
+    background-color: transparent;
+    color: aliceblue;
+
+}
+.bigdiv section .formdiv .form textarea{
+    border: 0.146vw solid #8e7229;
+    border-radius: 1.464vw;
+    background-color: transparent;
+    height: fit-content;
+    color: aliceblue;
+}
+.bigdiv section .formdiv .form .submit{
+    align-self: flex-start;
+    margin-top: 1.464vw;
+    height: 2.196vw;
+    background-color: #7f591b;
+    color: white;
+    border-radius: 1.464vw;
+}
+.bigdiv section .formdivtext{
+    padding-left: 1.464vw;
+}
+.bigdiv section .formdivtext .submitdivtext{
+    display: flex;
+    flex-direction: row;
+}
+.bigdiv section .formdivtext .submitdivtext h1{
+    font-size: 3.66vw;
+}
+.bigdiv section .formdivtext .submitdivtext .touch{
+    color: #8e7229;
+}
+@media only screen and (max-width: 766px){
+    .nav{
+        display: none;
+    }
+    .hamburger{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: 3vw;
+        width: 3vw;
+        border-radius: 4px;
+        position: absolute;
+        top: 10vw;
+        right: 10vw;
+        background-color: #8e7229;
+    }
+    .bigdiv section{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        /* border: 1px solid white; */
+    }
+    .bigdiv section .img {
+        width: 70.886vw;
+        margin-top: 1.464vw;
+    }
+    .bigdiv section .img img{
+        width: 36.603vw;
+        height: 14.641vw;
+    }
+    .bigdiv section .text1 {
+        display: flex;
+        flex-direction: column;
+        height: 29.283vw;
+        margin-top: 7.66vw;
+        /* background-color: red; */
+    }
+    .bigdiv section .text1 h1{
+        font-size: 2em;
+        margin: 0px;
+   }
+    .bigdiv section .text2 {
+        display: flex;
+        flex-direction: column;
+        }
+        .bigdiv section .text2 h1{
+            font-size: 2em;
+            margin: 0px;
+       }
+       .bigdiv section .text2 h3{
+        font-size: 2em;
+        margin: 0px;
+   }
+    /* .bigdiv section .text1 {
+        display: flex;
+        flex-direction: column;
+        } */
+    .bigdiv section .formdiv{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        }
+
+    .bigdiv  .reversesection{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
