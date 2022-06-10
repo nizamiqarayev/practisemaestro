@@ -161,7 +161,7 @@ html,body {
     width: 27.452vw;
     display: flex;
     flex-direction: column;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
 }
 .mobileparent .div1{
     border-bottom:0.073vw solid lightgray ;
@@ -180,7 +180,7 @@ html,body {
     background-color: #FFFFFF;
     padding-left: 0.732vw;
     font-family: 'Roboto', sans-serif;
-    background-color:antiquewhite
+    /* background-color:antiquewhite */
 
 }
 .mobileparent .chats:hover{
