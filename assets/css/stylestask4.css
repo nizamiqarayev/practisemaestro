@@ -59,6 +59,7 @@ html,body {
         background-color:#222F3A;
         color:#FFFFFF;
         cursor:pointer;
+        transition: all 0.3s;
     }
     .menu { grid-area: 3 / 1 / 6 / 4;
         background-color: aqua;
@@ -91,14 +92,17 @@ html,body {
         background-color:#DBDBDB;
         color:black;
         cursor:pointer;
+        padding-left: 90px ;
+        transition:ease-out 0.6s;
     }
 
     .img { 
-        grid-area: 3 / 5 / 8 / 12; 
+        grid-area: 3 / 5 / span 4/ span 12; 
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;       
+        align-items: center;   
+        /* background-color: green;     */
     }
     .img div{
         width: 23.426vw;
@@ -107,8 +111,8 @@ html,body {
         background-repeat: no-repeat;
     }
     .text { 
-        grid-area: 8 / 5 / 12 / 13; 
-
+        grid-area: 7 / 5 / span 2 / span 8;
+        /* background-color: #FF4D00; */
     }
     .text div{
         width: 57.7vw;
@@ -157,6 +161,7 @@ html,body {
     width: 27.452vw;
     display: flex;
     flex-direction: column;
+    background-color: lightgrey;
 }
 .mobileparent .div1{
     border-bottom:0.073vw solid lightgray ;
@@ -164,6 +169,7 @@ html,body {
     justify-content: space-between;
     padding: 0.732vw;
     box-shadow: 0vw 0.037vw 0vw rgba(0, 0, 0, 0.3);
+    
 }
 .mobileparent .div1 .text{
     margin-top: 1.83vw;
@@ -173,6 +179,9 @@ html,body {
     border-bottom:0.073vw solid lightgray ;
     background-color: #FFFFFF;
     padding-left: 0.732vw;
+    font-family: 'Roboto', sans-serif;
+    background-color:antiquewhite
+
 }
 .mobileparent .chats:hover{
     cursor:pointer;
@@ -204,6 +213,7 @@ html,body {
     height: 7.321vw;
     justify-content: space-around;
     align-items: center;
+    color: grey;
 }
 .mobileparent .plus{
     display: flex;
@@ -213,4 +223,5 @@ html,body {
     width: 5.124vw;
     height: 2.196vw;
     background: linear-gradient(202.17deg, #FF00D6 8.58%, #FF4D00 91.42%);
+    color: white;
 }
