@@ -175,7 +175,7 @@ actionbuttons.map(buttons=>{
                         printoutput("");
                         continuecalc=parseInt(num1)+parseInt(num2)
                         break;
-                    case '+':
+                    case '-':
                         result=parseInt(num1)-parseInt(num2)
                         console.log(parseInt(num1)+"-"+parseInt(num2)+"="+(parseInt(num1)-parseInt(num2)))
                         console.log(result)
