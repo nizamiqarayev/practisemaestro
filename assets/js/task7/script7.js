@@ -1,6 +1,5 @@
 let form=document.getElementById("form")
-let arr=[]
-// console.log("pengus")
+const arr=JSON.parse(localStorage.getItem('localTasks')) 
 let priority=document.getElementById("priority").value;
 // console.log(priority)
 const tasksdiv=document.getElementById("tasks");
@@ -9,7 +8,7 @@ const tasksdiv=document.getElementById("tasks");
 window.addEventListener('load',function(){
    const tasksload=JSON.parse(localStorage.getItem('localTasks')) 
    for(var i=0; i<tasksload.length;i++){
-    taskdivcreation(tasksload[i][0],tasksload[i][1])
+    taskdivcreation(tasksload[i][0],tasksload[i][1],i)
       }
 })
 function btnsubmit() {
@@ -18,13 +17,15 @@ function btnsubmit() {
     let temparr=[taskname,priority] 
     arr.push(temparr)
     localStorage.setItem('localTasks',JSON.stringify(arr))
-
-    taskdivcreation(taskname,priority)
+    let arrayloc=arr.indexOf(temparr)
+    taskdivcreation(taskname,priority,arrayloc)
 }
-function taskdivcreation(taskname,priority){
+function taskdivcreation(taskname,priority,arrayloc){
+    
     const task = document.createElement('div');
 	task.classList.add('task');
-
+    task.id=""+Math.random().toString(16).slice(2)
+    console.log(task.id);
     const task_content = document.createElement('div');
 	task_content.classList.add('content');
     
@@ -36,9 +37,9 @@ function taskdivcreation(taskname,priority){
     
     const taskpriority=document.createElement('select')
     taskpriority.id="taskpriority"
-    taskpriority.classList.add=('priority')
+    taskpriority.classList.add=('taskpriority')
     taskpriority.setAttribute('disabled', 'disabled');
-    const options=["High","Medium","Low"]
+    const options=[`${priority}`,"High","Medium","Low"]
     for (var i = 0; i<options.length; i++) {
         var option = document.createElement("option");
         option.value = options[i];
@@ -63,8 +64,14 @@ function taskdivcreation(taskname,priority){
             editbutton.innerText = "Save";
             tasknm.removeAttribute("readonly");
             taskpriority.removeAttribute("disabled")
+            arr[arrayloc][0]=tasknm.value;
+            arr[arrayloc][1]=taskpriority.value;
+            localStorage.setItem('localTasks',JSON.stringify(arr))
             editbutton.focus();
         } else {
+            arr[arrayloc][0]=tasknm.value;
+            arr[arrayloc][1]=taskpriority.value;
+            localStorage.setItem('localTasks',JSON.stringify(arr))
             editbutton.innerText = "Edit";
             tasknm.setAttribute("readonly", "readonly");
         }
@@ -72,6 +79,8 @@ function taskdivcreation(taskname,priority){
 
     deletebutton.addEventListener('click', (e) => {
         tasksdiv.removeChild(task);
+        arr.splice(arrayloc,1)
+        localStorage.setItem('localTasks',JSON.stringify(arr))
     });
     
     
@@ -87,4 +96,5 @@ function taskdivcreation(taskname,priority){
     tasksdiv.appendChild(task)
 
 }
+
 

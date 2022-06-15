@@ -60,6 +60,8 @@
 
     border-radius: 10px;
 }
+
+
 .mainmenu .tasks{
     margin-top: 10px;
     height: fit-content;
@@ -82,11 +84,31 @@ border-radius: 11.6944px;
 
 .mainmenu .tasks .task .content .taskname{
     margin: 0px 0px 10px 0px;
+    padding: 10px;
+    font-size: 1.5em;
     border: none;
     background-color: transparent;
 }
-.mainmenu .tasks .task .content .priority{
+.mainmenu .tasks .task .content #taskpriority{
 
+text-align: center;   
+ /* padding: 10px 0px 0px 30px; */
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    font-size: 1em;
+    /* font-style: italic; */
+    background: #fff;  
+      background-color: #E53170;
+    color: black;
+    font: bold;
+    
+}
+.mainmenu .tasks .task .content #taskpriority option{
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid red;
+    border-radius: 5px;
 }
 .mainmenu .tasks .task .buttonsdiv{
     padding: 30px;
