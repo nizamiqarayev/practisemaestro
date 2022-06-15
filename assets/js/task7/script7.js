@@ -1,19 +1,27 @@
 let form=document.getElementById("form")
 let arr=[]
-console.log("pengus")
+// console.log("pengus")
 let priority=document.getElementById("priority").value;
-console.log(priority)
+// console.log(priority)
 const tasksdiv=document.getElementById("tasks");
+// console.log(localStorage.getItem('localTasks'))
 
-
+window.addEventListener('load',function(){
+   const tasksload=JSON.parse(localStorage.getItem('localTasks')) 
+   for(var i=0; i<tasksload.length;i++){
+    taskdivcreation(tasksload[i][0],tasksload[i][1])
+      }
+})
 function btnsubmit() {
     let taskname=document.getElementById("taskname").value;
     let priority=document.getElementById("priority").value;
-    let temparr=[taskname,priority]
-    arr.push(temparr) 
-    console.log(arr)
+    let temparr=[taskname,priority] 
+    arr.push(temparr)
+    localStorage.setItem('localTasks',JSON.stringify(arr))
 
-
+    taskdivcreation(taskname,priority)
+}
+function taskdivcreation(taskname,priority){
     const task = document.createElement('div');
 	task.classList.add('task');
 
@@ -75,7 +83,7 @@ function btnsubmit() {
 
     task.appendChild(task_content);
     task.appendChild(buttoncontent)
-    console.log(task)
+    // console.log(task)
     tasksdiv.appendChild(task)
 
 }
