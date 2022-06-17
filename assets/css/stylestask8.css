@@ -81,7 +81,11 @@
     font: Montserrat;
 
 }
-.parent .menu .info .buttons a:hover{
+.parent .menu .info .buttons #cart:hover{
+    padding: 20px 50px 20px 50px;
+    transition: all 0.3s;
+}
+.parent .menu .info .buttons #now:hover{
     padding: 20px 50px 20px 50px;
     transition: all 0.3s;
 }

@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #596473;
+}
+.parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #596473;
+}
+.calendar1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEFEFE;
+    padding: 20px 150px 20px 150px;
+    border-radius: 1em;
+    position: relative;
+    
+}
+.calendar2{
+    position: relative;
+    padding: 20px 50px 20px 30px;
+}
+.currentmonthdiv{
+    display: flex;
+    font-size: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 40px 30px 40px;
+}
+.currentmonthdiv div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 30px 0px 30px;
+}
+.calendardiv{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    gap: 20px 60px;
+}
+.day{
+    
+}
+.day:hover{
+    cursor: pointer;
+}
+.eventdiv{
+
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #16161A;
+    position: relative;
+    left:-30px;
+    align-items: flex-start;
+    border-radius: 20px;
+
+}
+.eventdiv .h3_1{
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    color: #7F5AF0;
+    padding: 40px 40px 0px 70px;
+}
+.eventdiv .h3_2{
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    color: #7F5AF0;
+    padding: 20px 40px 10px 70px;
+}
+.eventdiv .h2_1{
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    color: #FFFFFF;
+    padding: 5px 40px 10px 80px;
+
+}
+.eventdiv .h2_2{
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    color: #FFFFFF;
+    padding: 30px 40px 0px 80px;
+
+}
+.upcomingeventdivtitle{
+    color: #FFFFFF;
+    padding: 5px 40px 5px 80px;
+}
+.upcomingeventdivdate{
+    display: flex;
+    color: #FFFFFF;
+    padding: 5px 40px 5px 80px;
+}

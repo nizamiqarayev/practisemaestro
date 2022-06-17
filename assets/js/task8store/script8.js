@@ -3,7 +3,6 @@
 const icondiv=document.getElementById('iconsdiv')
 const mainImgDiv=document.getElementById('mainimgdiv')
 const infodiv=document.getElementById('infodiv')
-
 const data={
     title:"Hollow Knight",
     version:"Game of The Year Edition",
