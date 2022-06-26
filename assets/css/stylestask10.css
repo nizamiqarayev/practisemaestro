@@ -144,6 +144,7 @@ body{
 }
 
 .registerform form .textinput i{
+    color: #5D5FEF;
     position:relative;
     top: 28px;
     left: 6px;
@@ -160,6 +161,8 @@ body{
 }
 
 .registerform form .options i{
+    color: #5D5FEF;
+
     position:relative;
     top: 28px;
     left: 6px;
