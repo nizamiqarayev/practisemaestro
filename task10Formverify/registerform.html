@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../assets/css/stylestask10.css">
+    <script src="https://kit.fontawesome.com/5221f8b839.js" crossorigin="anonymous"></script>
+
+    </head>
+        <body>
+            <div class="parent">
+            <div class="logo">
+                <a href="../task10Formverify/loginform.html"><i class="fa-brands fa-bandcamp fa-4x"></i></a>
+            </div>
+            <div class="text">
+                <h1>Register</h1>
+            </div>
+            <div class="registerform" id="formregister">
+                <form>
+                    <div class="textinput">
+                        <label for="name">Username</label>
+                        <i class="fa-solid fa-person"></i>
+                        <input type="text" id="name" name="name" value="">
+                    </div>
+                    <div class="textinput">
+                        <label for="email">Email Adress</label>
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" name="email" value="">
+                        <h6 class="h6empty" id="h6email">Enter a valid email</h6>
+                    </div>
+                    <div class="textinput">
+                        <label for="password">Password</label>
+                        <i class="fa-solid fa-key"></i>
+
+                        <input type="password" id="password" name="password" value="" >
+                        <h6 class="h6empty" id="h6">Your password is little secure</h6>
+                    </div>
+                    <div class="options">
+                        <label for="country">Country</label>
+                        <i class="fa-solid fa-globe"></i>
+                        <select id="country" name="country" class="form-control" >
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Russia">Russia</option>
+                        </select>
+                    </div>
+                    <div class="radio">
+                        <label>Level of Development</label>
+                        <div class="devlevel" id="devlevel">
+                            <input class="radio_button" type="radio" id="basic" name="level" value="basic">
+                            <label class="radio_label" for="basic" ><i class="fa-solid fa-circle-notch"></i> Basic</label>
+                              <input class="radio_button" type="radio" id="medium" name="level" value="medium">
+                            <label class="radio_label" for="medium" ><i class="fa-solid fa-circle-notch"></i> Medium</label>
+
+                              <input class="radio_button" type="radio" id="advanced" name="level" value="advanced">
+                            <label class="radio_label" for="advanced" ><i class="fa-solid fa-circle-notch"></i> Advanced</label>
+
+                        </div>
+                        <label>Programming skills</label>
+                        <div class="progSkills">
+                            <input class="radio_button" type="radio" id="java" name="skill" value="java">
+                            <label class="radio_label" for="java" ><i class="fa-solid fa-square"></i> Java</label>
+                              <input class="radio_button" type="radio" id="python" name="skill" value="python">
+                            <label class="radio_label" for="python" > <i class="fa-solid fa-square"></i> Python</label>
+
+                              <input class="radio_button" type="radio" id="javascript" name="skill" value="javascript">
+                            <label class="radio_label" for="javascript" ><i class="fa-solid fa-square"></i> Javascript</label>
+
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" onclick="getdata()">Sign up</button>
+                    </div>
+
+                </form>
+            </div>
+
+            </div>
+
+        </body>
+        <script src="../assets/js/task10form/script10reg.js"></script>
+
+</html>

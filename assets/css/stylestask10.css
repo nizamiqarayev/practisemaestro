@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.parent{
+    border: 1px solid #5D5FEF;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+.parent .logo a{
+    color: blue;
+}
+
+.continue{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+}
+.continue hr{
+    width: 107px;
+}
+
+.text{
+    padding: 5px;
+}
+.text a{
+    text-decoration: none;
+    color: blue;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.buttons a{
+    color: #5D5FEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    border: 1px solid lightslategray;
+    border-radius: 10px;
+    padding: 15px 48px 15px 50px;
+    text-decoration: none;
+}
+.buttons a:hover{
+    color: white;
+    transition: all 0.4s;
+    background-color: #5D5FEF;
+}
+.parent div {
+    margin: 5px;
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.form div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.form div label{
+    font-size: 20px;
+}
+.form div input{
+    padding: 10px 0px 10px 10px;
+    border-radius: 5px;
+}
+.form .remember{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.form .remember a{
+    text-decoration: none;
+    padding-left: 20px;
+}
+.form .remember:hover{
+    cursor: pointer;
+}
+.form .remember label:hover{
+    cursor: pointer;
+}
+.form button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #5D5FEF;
+    font-size: 1em;
+    color: white;
+}
+.form button:hover{
+    cursor: pointer;
+    transition: all 0.4s;
+    background-color: lightblue;
+}
+
+
+
+
+
+
+
+
+
+.registerform{
+    display: flex;
+    flex-direction: column;
+}
+.registerform form{
+    display: flex;
+    flex-direction: column;
+}
+
+.registerform form div{
+    display: flex;
+    flex-direction: column;
+    /* padding: 10px; */
+
+}
+
+.registerform form .textinput label{
+    position:absolute;
+}
+.registerform form .options label{
+    position:absolute;
+}
+
+.registerform form .textinput i{
+    position:relative;
+    top: 28px;
+    left: 6px;
+}
+.registerform form .textinput input{
+    padding: 10px 10px 10px 30px;
+    /* padding-left: 10px; */
+    border: 1px solid #5D5FEF;
+    border-radius: 10px;
+}
+.registerform form .textinput input:focus{
+    border: 2px solid blue;
+
+}
+
+.registerform form .options i{
+    position:relative;
+    top: 28px;
+    left: 6px;
+}
+
+
+.registerform form .options select{
+    padding: 10px;
+
+    padding-left: 30px;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+
+
+.registerform form .textinput .h6empty{
+    display: none;
+}
+
+.registerform form .textinput .h6weak{
+    font-size: 1em;
+    margin-top: 5px;
+    display: block;
+    color: red;
+}.registerform form .textinput .h6medium{
+    font-size: 1em;
+    margin-top: 5px;
+    display: block;
+    color: orange;
+}
+.registerform form .textinput .h6strong{
+    font-size: 1em;
+    margin-top: 5px;
+    display: block;
+    color: green;
+}
+
+
+
+
+
+.registerform .devlevel{
+    display: flex;
+    flex-direction: row;
+}
+.registerform .devlevel .radio_button{
+    display: none;
+}
+
+.registerform .devlevel .radio_label{
+    display: flex;
+    width: 100px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: #5D5FEF;
+    background-color: transparent;
+    border: 1px solid #5D5FEF;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.1s;
+    gap: 5px;
+}
+.registerform .devlevel .radio_button:focus +.radio_label{
+    border: 2px dashed #666;
+
+}
+.registerform .devlevel .radio_button:checked +.radio_label{
+    background-color: #5D5FEF;
+    color: white;
+            border-color: #666;
+}
+.registerform .devlevel .radio_label:hover{
+    background-color: #5D5FEF;
+    color: white;
+}
+
+
+
+.registerform .progSkills {
+    display: flex;
+    flex-direction: row;
+}
+.registerform .progSkills .radio_button{
+    display: none;
+}
+
+.registerform .progSkills .radio_label{
+    display: flex;
+    width: 100px;
+    height: 40px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: #5D5FEF;
+    background-color: transparent;
+    border: 1px solid #5D5FEF;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+.registerform .progSkills .radio_button:focus+.radio_label{
+    border: 2px dashed #666;
+
+}
+.registerform .progSkills .radio_button:checked+.radio_label{
+    background-color: #5D5FEF;
+    color: white;
+        border-color: #666;
+}
+.registerform .progSkills .radio_label:hover{
+    background-color: #5D5FEF;
+    color: white;
+}
+
+
+
+
+.registerform button {
+    padding: 10px;
+    background-color: #5D5FEF;
+    color: white;
+    border-radius: 10px;
+}

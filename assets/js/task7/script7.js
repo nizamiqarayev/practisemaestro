@@ -1,5 +1,6 @@
 let form=document.getElementById("form")
 const arr=JSON.parse(localStorage.getItem('localTasks')) 
+console.log(arr)
 let priority=document.getElementById("priority").value;
 // console.log(priority)
 const tasksdiv=document.getElementById("tasks");
