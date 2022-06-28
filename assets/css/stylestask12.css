@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.startdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.utility{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    /* border: 2px solid black; */
+}
+
+.images{
+    display: none;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    border: 5px solid yellow;
+    background: linear-gradient(#e66465, #9198e5);    /* background-color: aqua; */
+}
+
+.imageCell{
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px;
+    border: 5px solid yellow;
+    
+
+}
+.deletedcell{
+    display: none;
+}
+.newImgInputDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ padding: 20px;
+ /* border: 1px solid black; */
+ border-radius: 10px 0px 0px 10px;
+}
+.inputUrl{
+    padding: 20px;
+    font-size: 1em;
+
+}
+.button{
+    font-size: 1em;
+    height: 65px;
+    padding: 20px;
+    border-radius: 0px 10px 10px 0px;
+
+}
+.selectimg{
+    font-size: 1em;
+    padding: 20px;
+    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
+
+}
