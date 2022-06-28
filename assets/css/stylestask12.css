@@ -35,7 +35,7 @@ body{
     grid-template-columns: auto auto auto auto;
     gap: 10px;
     border: 5px solid yellow;
-    background: linear-gradient(#e66465, #9198e5);    /* background-color: aqua; */
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,240,0.927608543417367) 50%, rgba(69,73,252,1) 98%);
 }
 
 .imageCell{
