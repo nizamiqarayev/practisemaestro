@@ -77,7 +77,7 @@ function imagesDisplayerAfterAdd(n, url,imagesUrl){
         const newdiv=document.createElement('div')
         newdiv.id=index
         newdiv.setAttribute('class','imageCell')
-        newdiv.style.backgroundImage=`url(${imagesUrl[index]})`
+        newdiv.style.background=`url(${imagesUrl[index]})`
         imagesdiv.appendChild(newdiv)
 
         
@@ -93,7 +93,8 @@ function imageEdit(n, url,imagesUrl){
 function deleteImage(n){
     console.log(document.getElementById(`cell${n}`));
     document.getElementById(`cell${n}`).style.display='none'
-
+    
+    
 }
 
 function editCellSize(n,height,width){

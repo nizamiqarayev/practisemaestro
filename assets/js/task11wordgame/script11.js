@@ -4,18 +4,18 @@ const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P
 
 const words=[
     {
-        word:"wordddd1",
-        description:"wordddd1"
+        word:"penguin",
+        description:"A penguin has a large head, short neck, and elongated body. The tail is short, stiff, and wedge-shaped. The legs and webbed feet are set far back on the body, which gives penguins their upright posture on land."
 
     },
     {
-        word:"worddddd2",
-        description:"worddddd2"
+        word:"amongus",
+        description:"gregory, do you see the small vent on the floor? have you ever heard of among us, gregory? you need to vent. i know it will be hard for you to be sus but i know you can do it gregory."
         
     },
     {
-        word:"wordddd3",
-        description:"wordddd3"
+        word:"minecraft",
+        description:"Minecraft is a 3-D computer game where players can build anything. The game which has been described as like an 'online Lego' involves building blocks and creating structures across different environments and terrains. Set in a virtual world the game involves resource gathering, crafting items, building, and combat."
         
     }
 ]
@@ -24,17 +24,22 @@ let currentwordlength=0
 let currentletterindex=0
 
 
+let score=10
+
 function loadgame(){
     document.getElementById('time').style.display="block"
     document.getElementById('score').style.display="block"
     const word=document.getElementById('word')
     const keyboard=document.getElementById('alphabet')
+    document.getElementById('startbutton').style.display='none'
 
     let x = Math.floor((Math.random() * words.length));
     loadword(x,word)
     loadkeyboard(keyboard)
     document.getElementById('nextword').style.display="block"
     document.getElementById('hint').style.display="block"
+    timer()
+    scoredisplayer(score)
 
     console.log(words[currentindex].word)
 }
@@ -54,7 +59,7 @@ function loadword(wordindex,div)
 
 
 
-function loadword(){
+function loadnextword(){
     let x
     while(true){
          x = Math.floor((Math.random() * words.length));
@@ -72,6 +77,10 @@ function loadword(){
         tempdiv.setAttribute('class','wordcell')
         word.appendChild(tempdiv)
     }
+    if(document.getElementById('hintdiv')!=null){
+        document.getElementById('actions').removeChild(document.getElementById('hintdiv'))
+
+        }
     currentwordlength=words[x].word.length
     currentletterindex=0
     currentindex=x
@@ -100,11 +109,35 @@ function insertLetter(letter){
     if(currentletterindex<currentword.length-1){
         const buttons=document.getElementsByClassName('keyboardcell')
         const wordcells=document.getElementsByClassName('wordcell')
-        console.log(currentletterindex)
-        wordcells[currentletterindex].innerText=buttons[letter].id
-        currentletterindex++;
+        if(words[currentindex].word.toUpperCase().match(buttons[letter].id)){
+            console.log(currentletterindex)
+
+            let letterindexes=[]
+            
+            for (let index = 0; index < words[currentindex].word.toUpperCase().length; index++) {
+                if (words[currentindex].word.toUpperCase()[index] === buttons[letter].id) {
+                    letterindexes.push(index);
+                }
+              }
+
+            console.log(letterindexes+" index")
+            for (let index = 0; index < letterindexes.length; index++) {
+                wordcells[letterindexes[index]].innerText=buttons[letter].id                
+            }
+           
+            currentletterindex++;
+        }
+        else{
+            score-=1
+            scoredisplayer(score)
+            if(score==0){
+                resultchecker()
+            }
+        }
+        
     }
     else{
+        
         const buttons=document.getElementsByClassName('keyboardcell')
         const wordcells=document.getElementsByClassName('wordcell')
         console.log(currentletterindex)
@@ -123,11 +156,59 @@ function resultchecker(){
     
 
         if(insertedword==words[currentindex].word.toUpperCase()){
-            alert('Good')
+            score+=5
+            scoredisplayer(score)
+            loadnextword()
         }
         else{
-            alert('Wrong')
+            if(score==0){
+                document.getElementById('primary').style.display='none'
+                document.getElementById('utility').style.display='none'
+                document.getElementById('header').innerText=`Your final score is ${score}`
+    
+            }
         }
 }
+function hintdisplay(){
+    if(document.getElementById('hintdiv')!=null){
+        document.getElementById('actions').removeChild(document.getElementById('hintdiv'))
+
+    }
+
+    const hintdiv=document.createElement('div')
+    hintdiv.setAttribute('class','hintdiv')
+    hintdiv.id='hintdiv'
+    hintdiv.innerText=words[currentindex].description
+    document.getElementById('actions').appendChild(hintdiv)
+}
+
+
+function timer(){
+    let time=60
+    const timediv=document.getElementById("time")
+    timediv.innerText=`Time:${time}`
+    const interval=setInterval(function(){
+        time-=1
+        timediv.innerText=`Time:${time}`
+        if(time==0){
+            clearInterval(interval)
+            document.getElementById('primary').style.display='none'
+            document.getElementById('utility').style.display='none'
+            document.getElementById('header').innerText=`Your final score is ${score}`
+        }
+    },1000)
+    
+}
+function scoreloss(){
+    document.getElementById('primary').style.display='none'
+    document.getElementById('utility').style.display='none'
+    document.getElementById('header').innerText=`Your final score is ${score}`
+
+}
+function scoredisplayer(currentscore){
+    document.getElementById('score').innerText=`Score:${currentscore}`
+
+}
+
 
 

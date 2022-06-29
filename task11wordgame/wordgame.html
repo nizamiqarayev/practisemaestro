@@ -6,15 +6,15 @@
     </head>
     <body>
         <div class="parent">
-            <div class="header">
+            <div class="header" id="header">
                 <h1>Word Game</h1>
             </div>
-            <div class="utility">
+            <div class="utility" id="utility">
                 <div id="time">Time:</div>
                 <div id="score">Score:</div>
                 <button id="startbutton" type="button" onclick="loadgame()">Start</button>
             </div>
-            <div class="primary">
+            <div class="primary" id="primary">
                 <div class="info">
                     <h3>How to play</h3>
                     <ul>
@@ -33,8 +33,8 @@
                     </div>
                 </div>
                 <div class="actions" id="actions">
-                    <button id="nextword" type="button" onclick="loadword()">Next Word</button>
-                    <button id="hint" type="button" onclick="loadword()">Hint</button>
+                    <button id="nextword" type="button" onclick="loadnextword()">Next Word</button>
+                    <button id="hint" type="button" onclick="hintdisplay()">Hint</button>
 
                 </div>
             </div>
