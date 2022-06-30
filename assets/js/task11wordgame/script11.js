@@ -26,6 +26,8 @@ let currentletterindex=0
 
 let score=10
 
+let interval
+
 function loadgame(){
     document.getElementById('time').style.display="block"
     document.getElementById('score').style.display="block"
@@ -38,7 +40,7 @@ function loadgame(){
     loadkeyboard(keyboard)
     document.getElementById('nextword').style.display="block"
     document.getElementById('hint').style.display="block"
-    timer()
+    interval=timer()
     scoredisplayer(score)
 
     console.log(words[currentindex].word)
@@ -156,7 +158,9 @@ function resultchecker(){
     
 
         if(insertedword==words[currentindex].word.toUpperCase()){
+            clearInterval(interval)
             score+=5
+            timer()
             scoredisplayer(score)
             loadnextword()
         }
@@ -197,6 +201,8 @@ function timer(){
             document.getElementById('header').innerText=`Your final score is ${score}`
         }
     },1000)
+    return interval
+
     
 }
 function scoreloss(){

@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cityinputdiv{
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+
+}
+.cityinputdiv i{
+    position: relative;
+    top: 33px;
+    left: 17px;
+}
+.cityinput{
+    height: 50px;
+    border-radius: 40px;
+    padding-left: 45px;
+}
+.cityinputdiv:hover{
+    width: 200px;
+    border-radius: 0px;
+    transition: all 1s;
+
+
+}
