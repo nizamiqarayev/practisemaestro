@@ -102,15 +102,95 @@ header{
 
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 1.464vw;
-    /* background-color:#7134eb; */
-    justify-content: center;
-    position: relative;
-    bottom: 1.464vw;
+.mid{
+    display: flex;
+    align-self: flex-start;
+    /* gap: 600px; */
 }
+.filters{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+    padding: 10px 400px 10px 150px;
+    /* background-color: #7134eb; */
+}
+.filters label{
+    font-weight: bold;
+}
+.filters form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+    
+
+}
+.mid .filters form p{
+    font-size: 2em;
+    padding: 10px;
+}
+.mid .filters form div{
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.mid .filters form div input{
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    border-radius: 10px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+
+    margin: 10px;
+}
+
+
+.sorting{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 100px 10px 10px 10px;
+}
+.sorting p{
+    font-size: 2em;
+    margin: 10px;
+}
+.sorting select{
+    padding: 10px;
+    margin-top: 5px;
+}   
+.sorting div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.sortbyrating{
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 10px;
+}
+.sortbytasks{
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 10px;
+}
+.checked {
+    color: orange;
+  }
+.unchecked{
+    color: lightgray;
+}
+
+  
 
 .smallbackground{
     background-color: lightgray;
@@ -122,57 +202,69 @@ header{
     display: none;
 }
 
-.primarycelldiv{
-    display: flex;
-    flex-direction: column;
-    /* padding: 0vw 0px 0vw 1.464vw; */
-    gap: 0.366vw;
-}
-.celltopdiv{
-    display: flex;
-    justify-content:flex-start;
-    background-size: cover;
-    align-items: center;
-    width: fit-content;
-    width: 23.302vw;
-    height: 19.641vw;
-    border-radius: 0.732vw;
-    cursor: pointer;
-    border: 0.073vw solid lightgray;
-}
-.celltopdivtextdivH3{
-    position: relative;
-    top: 4.5vw;
-    left: 1.464vw;
-    border: 0.073vw solid lightgray;
-    background-color: white;
-    border-radius: 0.732vw;
-    padding: 1.5vw 5.962vw 1.5vw 3.66vw;
-    white-space:initial;
-    /* width: 7.321vw; */
-    
-    /* width: 80%; */
-    margin: auto;
-    /* font-size: 1.928vw; */
-}
-.cellbotdiv{
-    display: flex;
-    width: 14.641vw;
-    flex-direction: column;
-    word-break: break-all;
-    font-size: 1.171vw;
-}
-.subserviceA{
-    padding: 0.732vw 0vw 0.732vw 0.366vw;
-    border: 0.073vw solid white;
-
-}
-.subserviceA:hover{
-    border: 0.073vw solid lightgray;
-    border-radius:0.732vw ;
-    cursor: pointer;
+.grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+    /* background-color:#7134eb; */
+    justify-content: center;
+    /* position: relative; */
+    /* bottom: 1.464vw; */
 }
 
+
+.divcell{
+    border: 1px solid #C7C9CB;
+    border-radius: 6px;
+
+
+    padding: 15px;
+    margin-top: 20px;
+    width:500px;
+    height: fit-content;
+}
+.divcellheader{
+    font-size: 1.2em;
+    padding: 10px;
+
+}
+.divcellheaderrating{
+    display: flex;
+    padding: 30px 10px 10px 10px;
+}
+.achievements{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    padding: 5px;
+}
+.achievements div{
+    display: flex;
+    padding: 10px;
+}
+
+.description{
+    font-size: 1.5em;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: normal;
+}
+
+.divcellfooter{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    padding: 10px;
+}
+.divcellfooter a{
+    text-decoration: none;
+    color: blue;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.divcellfooter p{
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+}
 
 footer{
     width: 100%;
@@ -243,7 +335,7 @@ footer{
     padding: 0vw 1.464vw 1.464vw 4.64vw;
     cursor: pointer;
 }
-
+/* 
 @media only screen and (max-width: 600px){
     body{
         align-items: center;
@@ -309,7 +401,7 @@ footer{
         padding:  16px 24px;
         font-size: 4.464vw;
         white-space:initial;
-        /* width: 75%; */
+        /* width: 75%;
         margin: auto;
     }
     .cellbotdiv{
@@ -319,4 +411,4 @@ footer{
     footer{
         display: none;
     }
-}
+}  */
