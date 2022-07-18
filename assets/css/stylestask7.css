@@ -53,6 +53,7 @@
     border: 2px solid #E53170;
     height: 30px;
     border-radius: 10px;
+    padding-left: 10px;
 }
 .mainmenu .form .labeled select{
     border: 2px solid #E53170;

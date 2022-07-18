@@ -137,15 +137,15 @@ header{
     padding: 10px;
 }
 .mid .filters form div input{
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
     background-color: white;
     border-radius: 10px;
     vertical-align: middle;
     border: 1px solid #ddd;
-    appearance: none;
+    /* appearance: none;
     -webkit-appearance: none;
-    outline: none;
+    outline: none; */
     cursor: pointer;
 
     margin: 10px;
