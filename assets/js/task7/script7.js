@@ -8,9 +8,15 @@ const tasksdiv=document.getElementById("tasks");
 
 window.addEventListener('load',function(){
    const tasksload=JSON.parse(localStorage.getItem('localTasks')) 
-   for(var i=0; i<tasksload.length;i++){
-    taskdivcreation(tasksload[i][0],tasksload[i][1],i)
-      }
+   if(tasksload==null){
+    tasksload=[]
+   }
+   else{
+    for(var i=0; i<tasksload.length;i++){
+        taskdivcreation(tasksload[i][0],tasksload[i][1],i)
+          }
+   }
+  
 })
 function btnsubmit() {
     let taskname=document.getElementById("taskname").value;
