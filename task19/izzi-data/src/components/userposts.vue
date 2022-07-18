@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col">
-    <div v-for="post in this.posts" :key="post.id">
+  <div class="flex">
+    <div class="flex" v-for="post in this.posts" :key="post.id">
       <Post :post="post" :user="userdatasender"></Post>
     </div>
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 import axios from "axios";
-import Post from "./post.vue";
+// import Post from "./post.vue";
 export default {
   name: "Userposts_",
   props: {
@@ -34,7 +34,7 @@ export default {
       this.posts = null;
     }
   },
-  components: { Post },
+  // components: { Post },
 };
 </script>
 

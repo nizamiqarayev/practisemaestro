@@ -1,6 +1,6 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <div id="app">
+  <div class="flex items-center justify-center" id="app">
       <router-link to="/"></router-link>
       <router-link to="/comments"></router-link>
     <router-view />

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex gap-5 p-5 justify-center flex-wrap">
     <div v-for="post in this.posts" :key="post.id">
       <Post :post="post" :user="currentuserdata"></Post>
     </div>

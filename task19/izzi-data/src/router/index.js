@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 import Posts from "../components/posts.vue";
 import Comments from "../components/comments.vue";
 import UserSpecificPosts from "../components/userspecificposts.vue";
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -20,6 +19,7 @@ const routes = [
   {
     path: "/user/:id",
     name: "userposts",
+    meta: { transition: "slide-left" },
     component: UserSpecificPosts,
   },
 ];
