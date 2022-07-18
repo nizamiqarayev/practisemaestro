@@ -1,5 +1,8 @@
 let form=document.getElementById("form")
-const arr=JSON.parse(localStorage.getItem('localTasks')) 
+let arr=JSON.parse(localStorage.getItem('localTasks')) 
+if(arr==null){
+    arr=[]
+}
 console.log(arr)
 let priority=document.getElementById("priority").value;
 // console.log(priority)
@@ -7,7 +10,7 @@ const tasksdiv=document.getElementById("tasks");
 // console.log(localStorage.getItem('localTasks'))
 
 window.addEventListener('load',function(){
-   const tasksload=JSON.parse(localStorage.getItem('localTasks')) 
+   let tasksload=JSON.parse(localStorage.getItem('localTasks')) 
    if(tasksload==null){
     tasksload=[]
    }
@@ -81,6 +84,8 @@ function taskdivcreation(taskname,priority,arrayloc){
             localStorage.setItem('localTasks',JSON.stringify(arr))
             editbutton.innerText = "Edit";
             tasknm.setAttribute("readonly", "readonly");
+            taskpriority.setAttribute("disabled","disabled")
+
         }
     });
 
