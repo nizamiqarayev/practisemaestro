@@ -10,8 +10,9 @@ body{
 }
 header{
     display: flex;
-    gap: 3.66vw;
+    gap: 24.66vw;
     font-size: 1vw;
+    padding: 15px 15px;
     justify-content: center;
     align-items: center;
 }
@@ -22,9 +23,21 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4.392vw;
-    padding: 2.928vw 14.641vw 2vw 10.302vw;
+    gap: 70.995px;
+    /* padding: 39.996px 199.996px 27.32px 140.725px; */
     
+}
+.hrefs{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.hrefs a {
+    padding: 5px; 
+}
+.hrefs .purple {
+    color: #342D71;
 }
 
 .logo{
@@ -36,15 +49,16 @@ header{
     display: flex;
 }
 .logo img{
-    width: 2.6vw;
+    height: 70.516px;
+    width: 70.516px;
 }
 .headerLeft a{
     text-decoration: none;
     color: black;
     text-align: center;
-    padding: 5px;
+    /* padding: 5px; */
     border: 1px solid white;
-
+    font-size: 1.2em;
 
 }
 .headerLeft a:hover{
@@ -54,7 +68,9 @@ header{
 
 .headerRight{
     display: flex;
-    padding: 2.928vw 6.641vw 2vw 5.302vw;
+    /* padding: 2.928vw 6.641vw 2vw 5.302vw; */
+    position: relative;
+    left: 15px;
     gap: 4.392vw;
     justify-content: center;
     align-items: center;
@@ -70,16 +86,21 @@ header{
     justify-content: center;
     align-items: center;
 }
-.headerRight .input input{
+
+.headerRight .input button:hover{
+    cursor: pointer;
+}
+.headerRight .input button{
     background-color: transparent;
     border: 0vw solid;
-    height: 1.464vw;
-    width: 11.713vw;
+    /* height: 1.464vw;
+    width: 11.713vw; */
     color: grey;
-    padding: 1.464vw 1.464vw 1.464vw 2.928vw;
+    padding: 1.464vw 3.733vw 1.464vw 3.733vw;
     font-size: 1.171vw;
+    text-align: center;
 }
-.headerRight .input input:focus{
+.headerRight .input button:focus{
     outline: 0.073vw solid lightgray;
     border-radius: 0.732vw;
 }
@@ -109,13 +130,15 @@ header{
     /* background-color:#7134eb; */
     justify-content: center;
     position: relative;
-    bottom: 1.464vw;
+    bottom: 58.998px;
 }
 
 .smallbackground{
-    background-color: lightgray;
+    background-image: url("../images/task14images/head\ bg.png");
     width: 100%;
-    height: 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35%;
     position: relative;
 }
 .secondarysmallbackground{
@@ -127,28 +150,34 @@ header{
     flex-direction: column;
     /* padding: 0vw 0px 0vw 1.464vw; */
     gap: 0.366vw;
+    width: 100%;
 }
 .celltopdiv{
     display: flex;
     justify-content:flex-start;
     background-size: cover;
     align-items: center;
-    width: fit-content;
-    width: 23.302vw;
+    width: 24.984vw;
     height: 19.641vw;
     border-radius: 0.732vw;
     cursor: pointer;
     border: 0.073vw solid lightgray;
 }
+.h5 img{ position: relative;
+    top:4px;
+}
 .celltopdivtextdivH3{
     position: relative;
     top: 4.5vw;
-    left: 1.464vw;
+    left: 19.998px;
     border: 0.073vw solid lightgray;
     background-color: white;
     border-radius: 0.732vw;
-    padding: 1.5vw 5.962vw 1.5vw 3.66vw;
+    padding: 1.5vw 0vw 1.5vw 1.366vw;
+    width: 100%;
     white-space:initial;
+    font-weight: 600;
+    font-family: "Quicksand";
     /* width: 7.321vw; */
     
     /* width: 80%; */
@@ -157,7 +186,7 @@ header{
 }
 .cellbotdiv{
     display: flex;
-    width: 14.641vw;
+    width: 100%;
     flex-direction: column;
     word-break: break-all;
     font-size: 1.171vw;
@@ -165,6 +194,7 @@ header{
 .subserviceA{
     padding: 0.732vw 0vw 0.732vw 0.366vw;
     border: 0.073vw solid white;
+    width: 100%;
 
 }
 .subserviceA:hover{
@@ -180,8 +210,11 @@ footer{
 }
 .footertop{
     
-    background-color: lightgray;
-    
+    background-image: url("../images/task14images/footerimg.png");
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: contain;
     display: flex;
     justify-content: flex-end;
 
@@ -208,14 +241,18 @@ footer{
 }
 .footerbotTop{
     display: flex;
-    padding: 20px 20px 20px 40px;
+    /* padding: 20px 20px 20px 40px; */
+    gap: 200px;
+    padding-left: 180px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 .footerbotTop p{
     cursor: pointer;
 }
 .footerbotTop div{
     width: 14.641vw;
-    padding: 1.464vw 1.464vw 1.464vw 7.928vw;
+    /* padding: 1.464vw 1.464vw 1.464vw 7.928vw; */
 }
 .footerbotTop p{
     padding: 0.366vw;
@@ -224,23 +261,39 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0vw 0vw 0vw 5.857vw;
+    position: relative;
+    width: fit-content;
+    /* padding: 1.464vw 40.998px 1.464vw 0vw; */
+    padding: 2.928vw;
+    /* position: relative; */
+    /* left: 150px; */
+    width: 300px;
+    align-items: flex-start;
+
+
+    background-color: rgb(250 245 255);}
+#logosfooter p {
+    font-size: 1.2em;
 }
 .footerbotBot{
     display: flex;
+    gap: 90px;
     align-items: center;
     justify-content: center;
 }
 .footerbotBot .icons{
     display: flex;
-    gap: 1.464vw;
+    gap: 50.998px;
     padding: 0vw 10.785vw 1.464vw 2.321vw;
 }
 .footerbotBot .icons i{
  cursor: pointer;
+ width: 40px;
+ height: 40px;
+ color: gray;
 }
 .footerbotBot p {
-    padding: 0vw 1.464vw 1.464vw 4.64vw;
+    padding: 0vw 1.464vw 3.464vw 4.64vw;
     cursor: pointer;
 }
 

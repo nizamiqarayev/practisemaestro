@@ -40,7 +40,8 @@ function gridloader(data){
 
         const celltopdivtextdivH3=document.createElement("h2")
         celltopdivtextdivH3.setAttribute('class','celltopdivtextdivH3')
-        celltopdivtextdivH3.innerText=`${data.data.services[i].title_en}`
+        celltopdivtextdivH3.innerHTML=`${data.data.services[i].title_en}
+        <h5 class="h5"> <img src="../assets/images/task14images/image 1019.png" /> Starts from 20$/h</h5>`
 
         celltopdivtextdiv.appendChild(celltopdivtextdivH3)
 
@@ -71,13 +72,19 @@ function gridloader(data){
 
 
 function displayerchanger(div){
-    if(window.getComputedStyle(div).display=="none"){
-        div.style.display="flex"
-        console.log("opt1")
-
+    console.log('====================================');
+    console.log(window.innerWidth);
+    console.log('====================================');
+    if(window.innerWidth<600){
+        if(window.getComputedStyle(div).display=="none"){
+            div.style.display="flex"
+            console.log("opt1")
+    
+        }
+        else{
+            div.style.display="none"
+            console.log("opt2")
+        }
     }
-    else{
-        div.style.display="none"
-        console.log("opt2")
-    }
+   
 }

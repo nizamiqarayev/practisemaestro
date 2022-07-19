@@ -68,14 +68,52 @@ function imagesDisplayerAfterAdd(n, url,imagesUrl){
 
    console.log(imagesUrl)
    const selectionupdate=document.getElementById('selectimg')
-   const option = document.createElement("option");
-        option.value = parseInt(n)+parseInt(imagesUrl.length)-1;
-        console.log(option.value)
-        option.text = parseInt(n)+parseInt(imagesUrl.length);
-        selectionupdate.appendChild(option)
+   const editselect= document.getElementById("editselectimg")
+   const deleteselect=document.getElementById("deleteImgSelect")
+   const editsizeselect=document.getElementById("editImageCellSizeSelect")
+   editselect.innerHTML=``
+   selectionupdate.innerHTML=``
+   deleteselect.innerHTML=``
+   editsizeselect.innerHTML=``
+   for (let i = 0; i<imagesUrl.length; i++) {
+    console.log(imageURL[i])
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = i+1;
+    selectionupdate.appendChild(option);
+}
+for (let i = 0; i<imagesUrl.length; i++) {
+    console.log(imageURL[i])
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = i+1;
+    editselect.appendChild(option)
+   
+
+}for (let i = 0; i<imagesUrl.length; i++) {
+    console.log(imageURL[i])
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = i+1;
+    deleteselect.appendChild(option)
+
+}for (let i = 0; i<imagesUrl.length; i++) {
+    console.log(imageURL[i])
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = i+1;
+ 
+    editsizeselect.appendChild(option)
+
+}
+//    const option = document.createElement("option");
+//         option.value = parseInt(n)+parseInt(imagesUrl.length)-1;
+//         console.log(option.value)
+//         option.text = parseInt(n)+parseInt(imagesUrl.length);
+//         selectionupdate.appendChild(option)
     for (let index = 0; index < imagesUrl.length; index++) {
         const newdiv=document.createElement('div')
-        newdiv.id=index
+        newdiv.id=`cell${index}`
         newdiv.setAttribute('class','imageCell')
         newdiv.style.background=`url(${imagesUrl[index]})`
         imagesdiv.appendChild(newdiv)
@@ -86,8 +124,9 @@ function imagesDisplayerAfterAdd(n, url,imagesUrl){
 
 
 function imageEdit(n, url,imagesUrl){
-    document.getElementById(`cell${n}`).style.backgroundImage=`url(${url})`
 
+    console.log( document.getElementById(`cell${n}`));
+    document.getElementById(`cell${n}`).style.backgroundImage=`url(${url})`
 }
 
 function deleteImage(n){

@@ -9,7 +9,6 @@
        <input
         v-model="todoTextsubTitle"
         :class="isShown ? 'block' : 'hidden'"
-        :value="todoTextsubTitle"
         class="col form-control mr-2"
         type="text"
       />
@@ -28,7 +27,7 @@ export default {
     return {
       todoText: "",
       todoTextsubTitle: "",
-      isShown:false
+      isShown:true
     };
   },
   methods: {
