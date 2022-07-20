@@ -29,7 +29,8 @@ function gridloader(data){
         divcellheadername.setAttribute('class','divcellheadername')
         divcellheadername.id=`divcellheadername${index}`
 
-        divcellheadername.innerText=`${data.data.taskers[index].user.name} ${data.data.taskers[index].user.surname} (${data.data.taskers[index].supervisor})`
+        divcellheadername.innerHTML=`            <img src="../assets/images/task15filter/Oval.png" />
+        ${data.data.taskers[index].user.name} ${data.data.taskers[index].user.surname}`
 
 
         
@@ -49,7 +50,7 @@ function gridloader(data){
             }       
         }
 
-        divcellheaderrating.innerHTML=divcellheaderrating.innerHTML+`<p>(${data.data.taskers[index].averageRating})</p>`
+        divcellheaderrating.innerHTML=divcellheaderrating.innerHTML
 
         
 
@@ -89,7 +90,7 @@ function gridloader(data){
 
 
         achievements.innerHTML=`
-        <div><i class="fa-solid fa-circle-check"></i>
+        <div class="gapper"><i class="fa-solid fa-circle-check"></i>
         <p>${data.data.taskers[index].completedTasks}</p></div>
         `
 
@@ -98,7 +99,7 @@ function gridloader(data){
        
         if(data.data.taskers[index].eliteTasker){
             achievements.innerHTML=achievements.innerHTML+`  
-            <div><i class="fa-solid fa-circle-check"></i>
+            <div class="gapper"><i class="fa-solid fa-hashtag"></i></i>
             <p>TopPro</p></div>`
             
 
@@ -113,7 +114,7 @@ function gridloader(data){
 
         if(newpro){
             achievements.innerHTML=achievements.innerHTML+`  
-            <div><i class="fa-solid fa-circle-check"></i>
+            <div class="gapper"><i class="fa-solid fa-heart"></i></i>
             <p>NewPro</p></div>`
 
 
@@ -122,7 +123,7 @@ function gridloader(data){
         }
         else{
             achievements.innerHTML=achievements.innerHTML+`  
-            <div><i class="fa-solid fa-circle-check"></i>
+            <div class="gapper"><i class="fa-solid fa-heart"></i></i>
             <p>Pro</p></div>`
 
 
@@ -157,8 +158,9 @@ function gridloader(data){
         divcellfooter.id=`divcellfooter${index}`
 
         divcellfooter.innerHTML=`<a href="#">view profile</a>
-        <p>$35</p>
-        <a href="#">Book now</a>
+        <div><p>$35</p>
+        <a href="#">Book now</a></div>
+        
         `
 
 

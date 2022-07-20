@@ -41,7 +41,7 @@ function gridloader(data){
         const celltopdivtextdivH3=document.createElement("h2")
         celltopdivtextdivH3.setAttribute('class','celltopdivtextdivH3')
         celltopdivtextdivH3.innerHTML=`${data.data.services[i].title_en}
-        <h5 class="h5"> <img src="../assets/images/task14images/image 1019.png" /> Starts from 20$/h</h5>`
+        <h5 class="h5price"> <img src="../assets/images/task14images/image 1019.png" /> Starts from 20$/h</h5>`
 
         celltopdivtextdiv.appendChild(celltopdivtextdivH3)
 

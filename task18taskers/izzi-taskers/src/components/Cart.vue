@@ -17,7 +17,7 @@
       <div v-html="topprodisplayer"></div>
       <div v-html="protypedisplayer"></div>
     </div>
-    <div>
+    <div class="w-full h-40 flex items-center">
       <p>{{ this.data.bio }}</p>
     </div>
     <div class="flex justify-between items-center">

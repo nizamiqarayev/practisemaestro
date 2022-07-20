@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full">
+  <div class="flex flex-col w-full font-quicksand">
     <HeaderVue />
     <secondaryheaderVue />
     <div class="flex gap-28">

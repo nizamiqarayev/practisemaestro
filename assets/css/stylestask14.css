@@ -7,6 +7,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "Quicksand";
+
 }
 header{
     display: flex;
@@ -176,13 +178,21 @@ header{
     padding: 1.5vw 0vw 1.5vw 1.366vw;
     width: 100%;
     white-space:initial;
-    font-weight: 600;
+    /* font-weight: 600; */
     font-family: "Quicksand";
     /* width: 7.321vw; */
     
     /* width: 80%; */
     margin: auto;
     /* font-size: 1.928vw; */
+}
+.h5price{
+    font-size: 0.6em;
+    color: gray;
+}
+.h5price img{
+    position: relative;
+    top:5px
 }
 .cellbotdiv{
     display: flex;
@@ -242,10 +252,12 @@ footer{
 .footerbotTop{
     display: flex;
     /* padding: 20px 20px 20px 40px; */
+    position: relative;
     gap: 200px;
-    padding-left: 180px;
+    padding-left: 80px;
     padding-bottom: 40px;
     margin-bottom: 40px;
+    bottom: 40px;
 }
 .footerbotTop p{
     cursor: pointer;
@@ -263,6 +275,7 @@ footer{
     align-items: center;
     position: relative;
     width: fit-content;
+    bottom: 20px;
     /* padding: 1.464vw 40.998px 1.464vw 0vw; */
     padding: 2.928vw;
     /* position: relative; */
@@ -304,8 +317,8 @@ footer{
         padding: 10px;
     }
     .logo img{
-        height: 30px;
-        width: 30px;
+        height: 10.196vw;
+        width: 10.196vw;
     }
     .grid{
         position: static;
@@ -335,6 +348,7 @@ footer{
         width: 100%;
         padding: 10px;
     }
+    .secondaryheader i {}
     .secondaryheader .icon{
         height: 30px;
         width: 30px;
@@ -343,7 +357,7 @@ footer{
         display: flex;
         flex-direction: column;
         gap: 5px;
-        padding: 10px;
+        padding: 10px 10px 10px 40px;
     }
 
     .secondarysmallbackground div{
@@ -359,10 +373,11 @@ footer{
     }
     .celltopdivtextdivH3{
         position: static;
-        padding:  16px 24px;
+        padding:  1.171vw 1.757vw;
         font-size: 4.464vw;
         white-space:initial;
         /* width: 75%; */
+        width: 240px;
         margin: auto;
     }
     .cellbotdiv{
