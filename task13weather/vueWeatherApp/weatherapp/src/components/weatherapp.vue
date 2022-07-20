@@ -1,17 +1,19 @@
 <!-- eslint-disable vue/return-in-computed-property -->
 <!-- eslint-disable no-unused-vars -->
-<!-- eslint-disable no-unused-vars -->
-<!-- eslint-disable no-unused-vars -->
 <template>
   <div class="flex items-center justify-center h-screen w-full">
-    <input
-      v-show="this.searchpage"
-      v-on:keyup.enter="citycoordsfetcher()"
-      type="text"
-      v-model="city"
-      placeholder="Input City Name"
-    />
-    <div v-show="!this.searchpage" class="flex items-center">
+    <div v-show="this.searchpage" class="flex items-center justify-center">
+      <i class="fa-solid fa-magnifying-glass relative left-6"></i>
+      <input
+        class="h-10 w-10 text-center border-solid border-2 border-gray-400 outline-slate-500 rounded-full focus:w-60 transition-all text-black"
+        v-on:keyup.enter="citycoordsfetcher()"
+        type="text"
+        v-model="city"
+        placeholder=""
+      />
+    </div>
+
+    <div v-show="!this.searchpage" class="flex items-center transition-all">
       <div
         class="bg-weather-bg w-60 h-80 bg-no-repeat bg-cover pr-16 pt-0 flex flex-col justify-evenly rounded-3xl"
         @mouseover="changeHumidityAndWind(data.current)"
