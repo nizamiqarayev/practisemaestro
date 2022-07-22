@@ -1,59 +1,117 @@
+<!-- eslint-disable prettier/prettier -->
 <!-- eslint-disable vue/return-in-computed-property -->
 <!-- eslint-disable no-unused-vars -->
 <template>
   <div class="flex items-center justify-center h-screen w-full">
-    <div v-show="this.searchpage" class="flex items-center justify-center">
-      <i class="fa-solid fa-magnifying-glass relative left-6"></i>
-      <input
-        class="h-10 w-10 text-center border-solid border-2 border-gray-400 outline-slate-500 rounded-full focus:w-60 transition-all text-black"
-        v-on:keyup.enter="citycoordsfetcher()"
-        type="text"
-        v-model="city"
-        placeholder=""
-      />
-    </div>
-
-    <div v-show="!this.searchpage" class="flex items-center transition-all">
+    <transition name="fade">
       <div
-        class="bg-weather-bg w-60 h-80 bg-no-repeat bg-cover pr-16 pt-0 flex flex-col justify-evenly rounded-3xl"
-        @mouseover="changeHumidityAndWind(data.current)"
+        v-if="this.searchpage == true"
+        class="flex items-center justify-center transition-all"
       >
-        <div>
-          <h1 class="text-2xl text-white">{{ todaysday }}</h1>
-          <p class="text-white">{{ date }}</p>
-          <p class="text-white">{{ this.citydata.name }}, {{ this.country }}</p>
+        <i class="fa-solid fa-magnifying-glass relative left-7"></i>
+        <input
+          class="
+            h-10
+            w-10
+            text-center
+            border-solid border-2 border-gray-400
+            outline-slate-500
+            rounded-full
+            focus:w-60
+            transition-all
+            text-black
+          "
+          v-on:keyup.enter="citycoordsfetcher()"
+          type="text"
+          v-model="city"
+          placeholder=""
+        />
+      </div>
+    </transition>
+    <transition name="fade">
+      <div
+        v-if="this.searchpage == false"
+        class="flex items-center transition-all"
+      >
+        <div
+          class="
+            bg-weather-bg
+            w-60
+            h-80
+            bg-no-repeat bg-cover
+            pr-16
+            pt-0
+            flex flex-col
+            justify-evenly
+            rounded-3xl
+            hover:w-72 hover:h-96 hover:transition-all
+          "
+          @mouseover="changeHumidityAndWind(data.current)"
+        >
+          <div>
+            <h1 class="text-2xl text-white">{{ todaysday }}</h1>
+            <p class="text-white">{{ date }}</p>
+            <p class="text-white">
+              {{ this.citydata.name }}, {{ this.citydata.sys.country }}
+            </p>
+          </div>
+          <div class="flex flex-col items-center text-3xl">
+            <img
+              :src="this.iconurls[this.citydata.weather[0].icon]"
+              class="w-20 h-20"
+            />
+            <h1 class="text-white">{{ this.citydata.main.temp }}°C</h1>
+            <p class="text-white">{{ this.citydata.weather[0].main }}</p>
+          </div>
         </div>
-        <div class="flex flex-col items-center text-3xl">
-          <img :src="this.currenticon" class="w-20 h-20" />
-          <h1 class="text-white">{{ this.todaystemp }}°C</h1>
-          <p class="text-white">{{ this.todaysweather }}</p>
+        <div class="flex flex-col bg-black h-72 rounded-xl text-white">
+          <div class="flex flex-col items-start w-full px-10 py-1">
+            <div class="flex justify-between w-full py-2">
+              <p class="pl-10">Humidity</p>
+              <p class="pr-10">{{ this.humidity }}%</p>
+            </div>
+            <div class="flex justify-between w-full py-2">
+              <p class="pl-10">Wind</p>
+              <p class="pr-10">{{ this.wind }}km/h</p>
+            </div>
+          </div>
+          <div class="flex">
+            <div
+              @mouseover="changeHumidityAndWind(day)"
+              class="
+                flex flex-col
+                p-2
+                w-24
+                hover:bg-white hover:py-2
+                transition-all
+                rounded-3xl
+                hover:text-black
+              "
+              v-for="(day, index) in forecasts"
+              :key="day.dt"
+            >
+              <input v-show="false" />
+              <img class="w-16 h-16" :src="iconurls[day.weather[0].icon]" />
+              <p>{{ weekday(index) }}</p>
+              <h1>{{ day.temp.max }}°C</h1>
+            </div>
+          </div>
+          <div class="pt-5">
+            <a
+              href="searchagain()"
+              class="
+                py-4
+                px-72
+                rounded-full
+                text-black text-xl
+                bg-weather-bg bg-cover bg-no-repeat
+              "
+              >Change Location</a
+            >
+          </div>
         </div>
       </div>
-      <div class="flex flex-col bg-black h-72 rounded-xl text-white">
-        <div class="flex flex-col items-start w-full p-10">
-          <div class="flex justify-between w-full">
-            <p class="pl-10">Humidity</p>
-            <p class="pr-10">{{ this.humidity }}%</p>
-          </div>
-          <div class="flex justify-between w-full">
-            <p class="pl-10">Wind</p>
-            <p class="pr-10">{{ this.wind }}km/h</p>
-          </div>
-        </div>
-        <div class="flex">
-          <div
-            @mouseover="changeHumidityAndWind(day)"
-            class="flex flex-col p-2 w-24 hover:bg-white hover:py-2 transition-all rounded-3xl hover:text-black"
-            v-for="day in forecasts"
-            :key="day.dt"
-          >
-            <img class="w-16 h-16" :src="iconurls[day.weather[0].icon]" />
-            <p>{{ weekday() }}</p>
-            <h1>{{ day.temp.max }}°C</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -76,6 +134,7 @@ export default {
       wind: 0,
       currentday: {},
       forecasts: [],
+      dayindex: 0,
       iconurls: {
         "01d": "http://openweathermap.org/img/wn/01d@2x.png",
         "02d": "http://openweathermap.org/img/wn/02d@2x.png",
@@ -106,6 +165,7 @@ export default {
         "Saturday",
       ],
       todaysdaymultiplier: 0,
+      testData: {},
     };
   },
   computed: {
@@ -133,108 +193,81 @@ export default {
     },
   },
   methods: {
-    weekday() {
+    searchagain() {
+      this.searchpage = !this.searchpage;
+      this.citydata = {};
+      this.data = {};
+    },
+    weekday(index) {
       let dateObj = new Date();
-      let weekdayNumber = dateObj.getDay() - 1;
+      let weekdayNumber = dateObj.getDay();
       let weekdayName;
-      if (weekdayNumber + this.todaysdaymultiplier >= 7) {
+      if (weekdayNumber + index >= 7) {
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        weekdayName =
-          this.arrayOfWeekdays[(weekdayNumber + this.todaysdaymultiplier) % 7];
+        weekdayName = this.arrayOfWeekdays[(weekdayNumber + index) % 7];
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        this.todaysdaymultiplier++;
       } else {
-        weekdayName =
-          this.arrayOfWeekdays[weekdayNumber + this.todaysdaymultiplier];
+        weekdayName = this.arrayOfWeekdays[weekdayNumber + index];
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        this.todaysdaymultiplier++;
-      }
-      if (this.todaysdaymultiplier >= 8) {
-        this.todaysdaymultiplier = 0;
-      }
-      if (weekdayNumber + this.todaysdaymultiplier >= 14) {
-        return null;
       }
       return weekdayName;
     },
     async citycoordsfetcher() {
-      const axios = require("axios");
-      // eslint-disable-next-line no-unused-vars
-      let currentcitylon = this.citylon;
-      // eslint-disable-next-line no-unused-vars
-      let currentcitylat = this.citylat;
-      // eslint-disable-next-line no-unused-vars
-      let temppage = true;
-      let tempcitydata = this.citydata;
-      let tempcountry = this.country;
-      let temptodaysicon = this.currenticon;
-      let temporarytemp = this.todaystemp;
-      let temptodaysweather = this.todaysweather;
-      await axios
-        .request(
-          `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=abfc99ca74ebd73b71778a4b48b3b468&units=metric`
-        )
-        .then(function (response) {
-          temppage = false;
+      await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=abfc99ca74ebd73b71778a4b48b3b468&units=metric`
+      )
+        .then((response) => response.json())
+        .then((commits) => (this.citydata = commits));
+      console.log("currentcitydata: ", this.citydata);
+      this.citylon = this.citydata.coord.lon;
+      this.citylat = this.citydata.coord.lat;
+      console.log(this.citydata.sys);
 
-          console.log(response.data);
-          tempcitydata = response.data;
-          tempcountry = response.data.sys.country;
-          temptodaysicon = response.data.weather[0].icon;
-          temptodaysweather = response.data.weather[0].main;
-          temporarytemp = response.data.main.temp;
-          console.log(response.data.weather["icon"]);
-          console.log(response.data.coord.lon);
-          console.log(response.data.coord.lat);
-
-          currentcitylon = response.data.coord.lon;
-          currentcitylat = response.data.coord.lat;
-        })
-        .catch(function () {
-          temppage = true;
-        });
-      this.citydata = tempcitydata;
-      this.country = tempcountry;
-      this.currenticon = this.iconurls[temptodaysicon];
-      this.todaystemp = temporarytemp;
-      this.todaysweather = temptodaysweather;
-      console.log(this.todaystemp);
-
-      this.citylon = currentcitylon;
-      this.citylat = currentcitylat;
-      this.searchpage = temppage;
-      console.log(this.citylon);
-      console.log(this.citylat);
       this.weatherdatafetcher();
     },
     async weatherdatafetcher() {
-      const axios = require("axios");
-      let tempdata = this.data;
-      await axios
-        .request(
+      try {
+        await fetch(
           `https://api.openweathermap.org/data/2.5/onecall?lat=${this.citylat}&lon=${this.citylon}&exclude=alerts&appid=abfc99ca74ebd73b71778a4b48b3b468&units=metric
 `
         )
-        .then(function (response) {
-          tempdata = response.data;
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-      this.data = tempdata;
+          .then((response) => response.json())
+          .then((commits) => (this.data = commits))
+          .then(() => (this.searchpage = !this.searchpage));
+      } catch (error) {
+        console.log("Data doesnt exist");
+      }
+
       this.humidity = this.data.current.humidity;
       this.currentday = this.data.current;
       this.wind = this.data.current.wind_speed;
       this.forecasts = this.data.daily;
       console.log(this.data);
-      console.log(this.forecasts);
+      console.log("amogus:", this.forecasts);
     },
     changeHumidityAndWind(day) {
       this.humidity = day.humidity;
       this.wind = day.wind_speed;
     },
+    async tempfunction() {
+      await fetch(
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${this.citylat}&lon=${this.citylon}&exclude=alerts&appid=abfc99ca74ebd73b71778a4b48b3b468&units=metric`
+      )
+        .then((response) => response.json())
+        .then((commits) => (this.testData = commits));
+    },
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.fade-enter-active {
+  transition: all 0.5s;
+}
+.fade-leave-active {
+  transition: all 0s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
