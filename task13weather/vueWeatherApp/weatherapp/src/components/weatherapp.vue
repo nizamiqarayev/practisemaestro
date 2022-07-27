@@ -30,7 +30,7 @@
     </transition>
     <transition name="fade">
       <div
-        v-if="this.searchpage == false"
+        v-if="this.weatherpage == true"
         class="flex items-center transition-all"
       >
         <div
@@ -121,6 +121,7 @@ export default {
   data() {
     return {
       searchpage: true,
+      weatherpage: false,
       city: "",
       citydata: {},
       country: "",
@@ -195,6 +196,7 @@ export default {
   methods: {
     searchagain() {
       this.searchpage = !this.searchpage;
+      this.weatherpage = !this.weatherpage;
       this.citydata = {};
       this.data = {};
     },
@@ -233,7 +235,12 @@ export default {
         )
           .then((response) => response.json())
           .then((commits) => (this.data = commits))
-          .then(() => (this.searchpage = !this.searchpage));
+          .then(() => (this.searchpage = !this.searchpage))
+          .then(() =>
+            setTimeout(() => {
+              this.weatherpage = !this.weatherpage;
+            }, "1500")
+          );
       } catch (error) {
         console.log("Data doesnt exist");
       }
